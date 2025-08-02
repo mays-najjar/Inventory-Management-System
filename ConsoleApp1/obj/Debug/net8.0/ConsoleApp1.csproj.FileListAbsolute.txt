@@ -1,0 +1,28 @@
+E:\C# projects\Inventory Management System\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.exe
+E:\C# projects\Inventory Management System\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.deps.json
+E:\C# projects\Inventory Management System\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.runtimeconfig.json
+E:\C# projects\Inventory Management System\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.dll
+E:\C# projects\Inventory Management System\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.pdb
+E:\C# projects\Inventory Management System\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+E:\C# projects\Inventory Management System\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.AssemblyInfoInputs.cache
+E:\C# projects\Inventory Management System\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.AssemblyInfo.cs
+E:\C# projects\Inventory Management System\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+E:\C# projects\Inventory Management System\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.dll
+E:\C# projects\Inventory Management System\ConsoleApp1\obj\Debug\net8.0\refint\ConsoleApp1.dll
+E:\C# projects\Inventory Management System\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.pdb
+E:\C# projects\Inventory Management System\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.genruntimeconfig.cache
+E:\C# projects\Inventory Management System\ConsoleApp1\obj\Debug\net8.0\ref\ConsoleApp1.dll
+D:\Inventory Management System\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.exe
+D:\Inventory Management System\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.deps.json
+D:\Inventory Management System\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.runtimeconfig.json
+D:\Inventory Management System\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.dll
+D:\Inventory Management System\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.pdb
+D:\Inventory Management System\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Inventory Management System\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.AssemblyInfoInputs.cache
+D:\Inventory Management System\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.AssemblyInfo.cs
+D:\Inventory Management System\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+D:\Inventory Management System\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.dll
+D:\Inventory Management System\ConsoleApp1\obj\Debug\net8.0\refint\ConsoleApp1.dll
+D:\Inventory Management System\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.pdb
+D:\Inventory Management System\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.genruntimeconfig.cache
+D:\Inventory Management System\ConsoleApp1\obj\Debug\net8.0\ref\ConsoleApp1.dll
