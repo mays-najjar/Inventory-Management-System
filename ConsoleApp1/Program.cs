@@ -45,7 +45,7 @@ namespace ConsoleApp1
                         inventory.SearchForProduct(searchProductName!);
                         break;
                     case "exit":
-                        Console.WriteLine("Exiting the system. Goodbye!");
+                        Console.WriteLine("Exiting the application. Goodbye!");
                         return;
                     default:
                         Console.WriteLine("Invalid command. Please type valid command.");
