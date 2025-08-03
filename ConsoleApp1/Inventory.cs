@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1 {
-     public class Inventory
+namespace ConsoleApp1
+{
+    public class Inventory
     {
         private List<Product> products;
         public Inventory()
@@ -39,6 +40,21 @@ namespace ConsoleApp1 {
         }
         public List<Product> GetProducts()
         {
+            if (products.Count == 0)
+            {
+                Console.WriteLine("No products in inventory.");
+            }
+            else
+            {
+                Console.WriteLine("Current products in inventory:");
+                int index = 1;
+                foreach (var product in products)
+                {
+                    Console.WriteLine($"{index}. {product.Name}, Price: {product.Price}, Quantity: {product.Quantity}");
+                    index++;
+                }
+            }
             return products;
         }
-    } }
+    }
+}

@@ -13,12 +13,17 @@ namespace ConsoleApp1
                 Console.WriteLine("\nChoose an action:");
                 Console.WriteLine("Type exit to exit the system");
                 Console.WriteLine("Type add to add product");
+
                 Console.Write("Your command: ");
                 string input = Console.ReadLine()!.ToLower();
                 switch (input)
                 {
                     case "add":
                         inventory.AddProduct();
+                        break;
+                    case "view":
+                        inventory.GetProducts();
+                    
                         break;
                     case "exit":
                         Console.WriteLine("Exiting the system. Goodbye!");
