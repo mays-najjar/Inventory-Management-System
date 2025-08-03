@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -55,6 +56,63 @@ namespace ConsoleApp1
                 }
             }
             return products;
+        }
+        public void EditProduct(string name)
+        {
+            bool productFound = false;
+            foreach (var p in products)
+            {
+                if (!string.IsNullOrEmpty(p.Name) && p.Name.ToLower().Contains(name.ToLower()))
+
+                {
+                    productFound = true;
+                    Console.WriteLine($"Product found: {p.Name}, Price: {p.Price}, Quantity: {p.Quantity}");
+                    Console.WriteLine("Enter new name (or press Enter to keep current):");
+                    string? newName = Console.ReadLine();
+                    if (!string.IsNullOrWhiteSpace(newName))
+                    {
+                        p.Name = newName;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Keeping current name.");
+                    }
+                    Console.WriteLine("Enter new price (or press Enter to keep current):");
+                    string? priceInput = Console.ReadLine();
+                    if (!string.IsNullOrWhiteSpace(priceInput))
+                    {
+                        if (decimal.TryParse(priceInput, out decimal newPrice))
+                        {
+                            p.Price = newPrice;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid price. Keeping current value.");
+                        }
+                    }
+                    Console.WriteLine("Enter new quantity (or press Enter to keep current):");
+                    string? quantityInput = Console.ReadLine();
+                    if (!string.IsNullOrWhiteSpace(quantityInput))
+                    {
+                        if (int.TryParse(quantityInput, out int newQuantity))
+                        {
+                            p.Quantity = newQuantity;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid quantity. Keeping current value.");
+                        }
+                    }
+                    
+                    Console.WriteLine($"Product edited: {p.Name}, Price: {p.Price}, Quantity: {p.Quantity}");
+                    Console.WriteLine("Product updated successfully!");
+                }
+
+            }
+            if (!productFound)
+            {
+                Console.WriteLine("Product not found.");
+            }
         }
     }
 }

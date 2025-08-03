@@ -11,8 +11,11 @@ namespace ConsoleApp1
             while (true)
             {
                 Console.WriteLine("\nChoose an action:");
-                Console.WriteLine("Type exit to exit the system");
+                Console.WriteLine("Type view to view all products");
                 Console.WriteLine("Type add to add product");
+                Console.WriteLine("Type edit to edit a product");
+                Console.WriteLine("Type exit to exit the system");
+
 
                 Console.Write("Your command: ");
                 string input = Console.ReadLine()!.ToLower();
@@ -23,7 +26,11 @@ namespace ConsoleApp1
                         break;
                     case "view":
                         inventory.GetProducts();
-                    
+                        break;
+                    case "edit":
+                        Console.WriteLine("Enter the name of product you want to edit.");
+                        string? productName = Console.ReadLine();
+                        inventory.EditProduct(productName!);
                         break;
                     case "exit":
                         Console.WriteLine("Exiting the system. Goodbye!");
