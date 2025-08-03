@@ -120,8 +120,21 @@ namespace ConsoleApp1
             }
 
         }
+        public void SearchForProduct(string name)
+        {
+            Product? result = searchProduct(name);
+            if (result != null)
+            {
+                Console.WriteLine($"Product found:");
+                Console.WriteLine($"Name: {result.Name}, Price: {result.Price}, Quantity: {result.Quantity}");
+            }
+            else
+            {
+                Console.WriteLine("Product not found.");
+            }
+        }
 
-    
+
         public Product searchProduct(string name)
         {
             foreach (var p in products)
