@@ -35,9 +35,18 @@ namespace ConsoleApp1
             products.Add(product);
             Console.WriteLine("Product added successfully!");
         }
-        public void DeleteProduct(Product product)
+        public void DeleteProduct(String name)
         {
-            products.Remove(product);
+            Product? product = searchProduct(name);
+            if (product != null)
+            {
+                products.Remove(product);
+                Console.WriteLine($"Product '{name}' deleted successfully.");
+            }
+            else
+            {
+                Console.WriteLine($"Product '{name}' not found.");
+            }
         }
         public List<Product> GetProducts()
         {
@@ -59,60 +68,70 @@ namespace ConsoleApp1
         }
         public void EditProduct(string name)
         {
-            bool productFound = false;
-            foreach (var p in products)
+            Product? product = searchProduct(name);
+            if (product != null)
             {
-                if (!string.IsNullOrEmpty(p.Name) && p.Name.ToLower().Contains(name.ToLower()))
+                Console.WriteLine($"Product found: {product.Name}, Price: {product.Price}, Quantity: {product.Quantity}");
 
+                Console.WriteLine("Enter new name (or press Enter to keep current):");
+                string? newName = Console.ReadLine();
+                if (!string.IsNullOrWhiteSpace(newName))
                 {
-                    productFound = true;
-                    Console.WriteLine($"Product found: {p.Name}, Price: {p.Price}, Quantity: {p.Quantity}");
-                    Console.WriteLine("Enter new name (or press Enter to keep current):");
-                    string? newName = Console.ReadLine();
-                    if (!string.IsNullOrWhiteSpace(newName))
+                    product.Name = newName;
+                }
+                else
+                {
+                    Console.WriteLine("Keeping current name.");
+                }
+
+                Console.WriteLine("Enter new price (or press Enter to keep current):");
+                string? priceInput = Console.ReadLine();
+                if (!string.IsNullOrWhiteSpace(priceInput))
+                {
+                    if (decimal.TryParse(priceInput, out decimal newPrice))
                     {
-                        p.Name = newName;
+                        product.Price = newPrice;
                     }
                     else
                     {
-                        Console.WriteLine("Keeping current name.");
+                        Console.WriteLine("Invalid price. Keeping current value.");
                     }
-                    Console.WriteLine("Enter new price (or press Enter to keep current):");
-                    string? priceInput = Console.ReadLine();
-                    if (!string.IsNullOrWhiteSpace(priceInput))
-                    {
-                        if (decimal.TryParse(priceInput, out decimal newPrice))
-                        {
-                            p.Price = newPrice;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid price. Keeping current value.");
-                        }
-                    }
-                    Console.WriteLine("Enter new quantity (or press Enter to keep current):");
-                    string? quantityInput = Console.ReadLine();
-                    if (!string.IsNullOrWhiteSpace(quantityInput))
-                    {
-                        if (int.TryParse(quantityInput, out int newQuantity))
-                        {
-                            p.Quantity = newQuantity;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid quantity. Keeping current value.");
-                        }
-                    }
-                    
-                    Console.WriteLine($"Product edited: {p.Name}, Price: {p.Price}, Quantity: {p.Quantity}");
-                    Console.WriteLine("Product updated successfully!");
                 }
 
+                Console.WriteLine("Enter new quantity (or press Enter to keep current):");
+                string? quantityInput = Console.ReadLine();
+                if (!string.IsNullOrWhiteSpace(quantityInput))
+                {
+                    if (int.TryParse(quantityInput, out int newQuantity))
+                    {
+                        product.Quantity = newQuantity;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid quantity. Keeping current value.");
+                    }
+                }
+
+                Console.WriteLine($"Product updated: {product.Name}, Price: {product.Price}, Quantity: {product.Quantity}");
             }
-            if (!productFound)
+            else
             {
                 Console.WriteLine("Product not found.");
             }
+
+        }
+
+    
+        public Product searchProduct(string name)
+        {
+            foreach (var p in products)
+            {
+                if (p.Name.Equals(name, StringComparison.OrdinalIgnoreCase))
+                {
+                    return p;
+                }
+            }
+            return null!;
         }
     }
 }
