@@ -29,6 +29,4 @@ namespace InventoryManagement;
             get { return quantity; }
             set { quantity = value; }
         }
-
-        
     }
