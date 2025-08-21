@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace InventoryManagement
-{
+namespace InventoryManagement;
+
     public class Product
     {
         private string name;
@@ -17,11 +17,8 @@ namespace InventoryManagement
             this.price = price;
             this.quantity = quantity;
         }
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
+        public string Name { get; set; }
+
         public decimal Price
         {
             get { return price; }
@@ -35,4 +32,3 @@ namespace InventoryManagement
 
         
     }
-}
