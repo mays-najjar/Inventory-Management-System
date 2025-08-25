@@ -58,11 +58,10 @@ namespace InventoryManagement
                         else
                         {
                             Console.WriteLine("Current products in inventory:");
-                            int index = 1;
-                            foreach (var p in products)
+                            for (int i = 0; i < products.Count; i++)
                             {
-                                Console.WriteLine($"{index}. Name: {p.Name}, Price: {p.Price}, Quantity: {p.Quantity}");
-                                index++;
+                                var p = products[i];
+                                Console.WriteLine($"{i + 1}. Name: {p.Name}, Price: {p.Price}, Quantity: {p.Quantity}");
                             }
                         }
                         break;
@@ -104,7 +103,7 @@ namespace InventoryManagement
                     case "search":
                         Console.WriteLine("Enter the name of product you want to search.");
                         string? searchProductName = Console.ReadLine();
-                        Product? foundProduct = inventory.searchProduct(searchProductName!);
+                        Product? foundProduct = inventory.SearchProduct(searchProductName!);
                         if (foundProduct != null)
                         {
                             Console.WriteLine($"Product found: {foundProduct.Name}, Price: {foundProduct.Price}, Quantity: {foundProduct.Quantity}");
