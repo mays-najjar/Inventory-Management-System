@@ -8,6 +8,8 @@ namespace InventoryManagement
 {
     public class Inventory
     {
+        const int MinQuantity = 0;
+        const decimal MinPrice = 0;
         private List<Product> products;
 
         public Inventory()
@@ -28,10 +30,8 @@ namespace InventoryManagement
                 products.Remove(product);
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            return false;
+
         }
 
         public List<Product> GetProducts()
@@ -47,16 +47,12 @@ namespace InventoryManagement
             if (!string.IsNullOrWhiteSpace(newName))
                 product.Name = newName;
 
-            const decimal MinPrice = 0;
-
             if (newPrice != null && newPrice >= MinPrice)
                 product.Price = newPrice.Value;
 
-            const int MinQuantity = 0;
-
             if (newQuantity != null && newQuantity >= MinQuantity)
                 product.Quantity = newQuantity.Value;
-
+                
             return true;
         }
 
@@ -64,6 +60,5 @@ namespace InventoryManagement
         {
             return products.FirstOrDefault(p => p.Name == name);
         }
-
     }
 }
